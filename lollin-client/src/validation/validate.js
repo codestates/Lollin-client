@@ -1,8 +1,8 @@
-export default function validateSignup(values) {
+export default function validate(values) {
     let errors = {}
 
-    if(!values.Id.trim()) {
-        errors.Id = "ID required"
+    if(!values.userId.trim()) {
+        errors.userId = "ID required"
     }
 
     if(!values.password) {

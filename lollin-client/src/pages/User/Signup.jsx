@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import useForm from "../validation/useForm";
-import validate from "../validation/validate";
+import useForm from "../../validation/useForm";
+import validate from "../../validation/validate";
 import axios from 'axios';
-import { Errors, SignupBtn } from "../validation/formElements";
+import { Container, Form, InputArea, Errors, InputBox, LabelName, SignupBtn,
+    Title } from "../../validation/formElements";
 
 
-const SignupModal = ({ submitForm, userId, password, nickname, email }) => {
+const Signup = ({ submitForm, username, password, nickname, email }) => {
     const { handleChange, values, handleSubmit, errors } = useForm(submitForm, validate);
     const [isSubmitted, setIsSubmitted] = useState(false)
     
@@ -14,12 +15,12 @@ const SignupModal = ({ submitForm, userId, password, nickname, email }) => {
     }
 
     const handleSignup = async () => {
-        console.log("회원가입 성공!", userId, password, nickname, email);
+        console.log("회원가입 접속", username, password, nickname, email);
         await axios
         .post(
             '/user/signup',
             {
-                userId,
+                username,
                 password,
                 nickname,
                 email
@@ -45,78 +46,76 @@ const SignupModal = ({ submitForm, userId, password, nickname, email }) => {
 
     return (
         <>
-            <form className="form" onSubmit={handleSubmit}>
-                <h1>Sign Up</h1>
-                <div className="form-inputs">
-                    <label htmlFor="userId"
-                    className="form-label">
+        <Container>
+            <Form onSubmit={handleSubmit}>
+                <Title>Sign Up</Title>
+                <InputArea>
+                    <LabelName htmlFor="username">
                     ID
-                    </label>
-                    <input
-                        id="userId"
+                    </LabelName>
+                    <br />
+                    <InputBox
+                        id="username"
                         type="text"
-                        name="userId"
-                        className="form-input"
+                        name="username"
                         placeholder="Enter your Id"
-                        value={values.userId}
+                        value={values.username}
                         onChange={handleChange}
                     />
-                    {errors.userId && <Errors>{errors.userId}</Errors>}
-                </div>
-                <div className="form-inputs">
-                    <label htmlFor="password"
-                    className="form-label">
+                    {errors.username && <Errors>{errors.username}</Errors>}
+                </InputArea>
+                <InputArea>
+                    <LabelName htmlFor="password">
                     Password
-                    </label>
-                        <input
+                    </LabelName>
+                    <br />
+                        <InputBox
                             id="password"
                             type="password"
                             name="password"
-                            className="form-input"
                             placeholder="8 characters or more Password"
                             value={values.password}
                             onChange={handleChange}
                         />
                         {errors.password && <Errors>{errors.password}</Errors>}
-                </div>
-                <div className="form-inputs">
-                    <label htmlFor="nickname"
-                    className="form-label">
+                </InputArea>
+                <InputArea>
+                    <LabelName htmlFor="nickname">
                     LoL-Nickname
-                    </label>
-                        <input
+                    </LabelName>
+                    <br />
+                        <InputBox
                             id="nickname"
                             type="text"
                             name="nickname"
-                            className="form-input"
                             placeholder="Enter your LoL-Nickname"
                             value={values.nickname}
                             onChange={handleChange}
                         />
                         {errors.nickname && <Errors>{errors.nickname}</Errors>}
-                </div>
-                <div className="form-inputs">
-                    <label htmlFor="email"
-                    className="form-label">
+                </InputArea>
+                <InputArea>
+                    <LabelName htmlFor="email">
                     E-mail
-                    </label>
-                        <input
+                    </LabelName>
+                    <br />
+                        <InputBox
                             id="email"
                             type="email"
                             name="email"
-                            className="form-input"
                             placeholder="Enter your E-mail"
                             value={values.email}
                             onChange={handleChange}
                         />
                         {errors.email && <Errors>{errors.email}</Errors>}
-                </div>
+                </InputArea>
                 <SignupBtn type="submit" onClick={handleSignup}>
                     {!isSubmitted ? "Sign up" : "Succeed!"}
                 </SignupBtn>
-            </form>
+            </Form>
+            </Container>
         </>
     )
 }
 
-export default SignupModal;
+export default Signup;

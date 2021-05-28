@@ -4,10 +4,15 @@ import { FaBars } from "react-icons/fa";
 
 export const Nav = styled.nav`
   background: #000;
+  opacity: 0.865;
   height: 80px;
   display: flex;
   justify-content: space-between;
   z-index: 3000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 `;
 
 export const Logo = styled(Link)`
@@ -86,9 +91,9 @@ export const NavBtn = styled.nav`
   }
 `;
 
-export const NavLoginBtn = styled.button`
+export const NavLoginBtn = styled(Link)`
   border-radius: 4px;
-  background: '#5a5aff';
+  background: #000000;
   margin-left: 10px;
   padding: 10px 22px;
   color: #fff;
@@ -105,7 +110,7 @@ export const NavLoginBtn = styled.button`
   }
 `;
 
-export const NavSignupBtn = styled.button`
+export const NavSignupBtn = styled(Link)`
     border-radius: 4px;
     background: #5A5AFF;
     margin-left: 10px;

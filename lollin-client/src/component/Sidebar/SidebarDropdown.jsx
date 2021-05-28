@@ -43,12 +43,12 @@ const DropdownWrapper = styled.div``;
 const DropdownMenu = styled.div`
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, 80px);
+    grid-template-rows: repeat(4, 80px);
     text-align: center;
     margin-bottom: 4rem;
 
     @media screen and (max-width: 480px) {
-        grid-template-rows: repeat(5, 60px);
+        grid-template-rows: repeat(4, 60px);
     }
 `;
 
@@ -75,14 +75,18 @@ const BtnWrap = styled.div`
     justify-content: center;
 `;
 
-const SidebarDropdown = ({ isOpen, toggle }) => {
-    const [loginModalOn, setLoginModalOn] = useState(false);
-    const [signUpModalOn, setSignUpModalOn] = useState(false);
+const SidebarDropdown = ({ isOpen, toggle, loginModalOn, setLoginModalOn, signUpModalOn, setSignUpModalOn }) => {
+    // const [loginModalOn, setLoginModalOn] = useState(false);
+    // const [signUpModalOn, setSignUpModalOn] = useState(false);
+    // console.log(loginModalOn);
+    const [isLogin, setLogin] = useState(false)
+    const [isSignup, setSignup] = useState(false)
 
     return (
         <>
-        <LoginModal show={loginModalOn} onHide={() => setLoginModalOn(false)} />
-        <SignupModal show={signUpModalOn} onHide={() => setSignUpModalOn(false)} />
+        {/* {loginModalOn ? (<LoginModal show={loginModalOn} onHide={() => setLoginModalOn(false)} />)
+        : ""}
+        {signUpModalOn ? (<SignupModal show={signUpModalOn} onHide={() => setSignUpModalOn(false)} />) : ""} */}
         <DropdownContainer isOpen={isOpen} onClick={toggle}>
             <Icon onClick={toggle}>
                 <CloseIcon />
@@ -96,11 +100,11 @@ const SidebarDropdown = ({ isOpen, toggle }) => {
                     ))}
                 </DropdownMenu>
                 <BtnWrap>
-                    <LoginButton primary="true" round="true" big="true" to="/user/login">
-                        Login
+                    <LoginButton onClick={() => setLoginModalOn(true)}>
+                        {setLogin ? "Login" : "Logout"}
                     </LoginButton>
-                    <SignupButton primary="true" round="true" big="true" onClick={() => setSignUpModalOn(true)}>
-                        Signup
+                    <SignupButton onClick={() => setSignUpModalOn(true)}>
+                        {setSignup ? "Signup" : "MyInfo"}
                     </SignupButton>
                 </BtnWrap>
             </DropdownWrapper>

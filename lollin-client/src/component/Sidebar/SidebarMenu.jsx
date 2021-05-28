@@ -12,10 +12,6 @@ const SidebarMenu = [
         link: "/champions/all"
     },
     {
-        title: "Champ Details",
-        link: "/champions/detail"
-    },
-    {
         title: "Matching Info",
         link: "/utils/search?name=${name}"
     },

@@ -1,19 +1,17 @@
 import React, { useState } from 'react'
 import { Nav, Logo, NavLink, Bars, NavMenu, NavBtn, NavLoginBtn, NavSignupBtn } from './NavbarFixedElements';
 import SignupModal from "../../modals/SignupModal";
-import LoginModal from "../../modals/LoginModal";
+import Login from "../../pages/User/Login";
 
 
-const Navbar = ({ toggle }) => {
-    // const [isLogin, setLogin] = useState(false)
-    // const [isSignup, setSignup] = useState(false)
-    const [loginModalOn, setLoginModalOn] = useState(false);
-    const [signUpModalOn, setSignUpModalOn] = useState(false);
+const Navbar = ({ toggle, loginModalOn, setLoginModalOn, signUpModalOn, setSignUpModalOn }) => {
+    const [isLogin, setLogin] = useState(false)
+    const [isSignup, setSignup] = useState(false)
+
+    
 
     return (
         <>
-            <LoginModal show={loginModalOn} onHide={() => setLoginModalOn(false)} />
-            <SignupModal show={signUpModalOn} onHide={() => setSignUpModalOn(false)} />
             <Nav>
                 <Bars onClick={toggle} />
                 <Logo to="/" activeStyle>
@@ -26,22 +24,17 @@ const Navbar = ({ toggle }) => {
                     <NavLink to="/champions/all">
                         Champ DB
                     </NavLink>
-                    <NavLink to="/champions/detail">
-                        Champ Details
-                    </NavLink>
                     <NavLink to="/utils/search?name=${name}">
                         Matching Info
                     </NavLink>
                 </NavMenu>
                 <NavBtn>
-                    <NavLoginBtn onClick={() => setLoginModalOn(true)}>
-                        Login
+                    <NavLoginBtn to="/user/login" onClick={() => setLoginModalOn(true)}>
+                        {setLogin ? "Login" : "Logout"}
                     </NavLoginBtn>
-                    {/* {isLogin ? 'Login' : 'Logout'} */}
-                    <NavSignupBtn onClick={() => setSignUpModalOn(true)}>
-                        Signup
+                    <NavSignupBtn to="/user/signup" onClick={() => setSignUpModalOn(true)}>
+                        {setSignup ? "Signup" : "MyInfo"}
                     </NavSignupBtn>
-                    {/* {isSignup ? 'Signup' : 'MyInfo'} */}
                 </NavBtn>
             </Nav>
             {/* <Sidebar /> */}

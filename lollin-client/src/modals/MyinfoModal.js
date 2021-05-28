@@ -1,14 +1,13 @@
 import React from 'react';
 import HorizonLine from './HorizonLine';
-import { Modal, Button, Form, Container } from 'react-bootstrap';
+// import { Modal, Button, Form, Container } from 'react-bootstrap';
 
 const MyinfoModal = () => {
     return (
         <>
-            <Modal
+            {/* <Modal
             show={show}
             onHide={onHide}
-            size="lg"
             aria-labelledby="contained-modal-title-vcenter"
             centered
         >
@@ -48,7 +47,7 @@ const MyinfoModal = () => {
                     </Form>
                     </Modal.Body>
             </Container>
-        </Modal>
+        </Modal> */}
         </>
     )
 }

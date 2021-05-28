@@ -1,10 +1,14 @@
 import styled from "styled-components";
-// import { FooterLink as Link } from "react-router-dom";
+import { NavLink as Link } from "react-router-dom";
 
 export const Container = styled.div`
     padding: 20px 10px;
     background: #000;
     color: #fff;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
 `;
 
 export const Logo = styled.div`
@@ -46,7 +50,7 @@ export const Row = styled.div`
     }
 `;
 
-export const FooterLink = styled.div`
+export const FooterLink = styled.a`
     color: #fff;
     margin-bottom: 14px;
     font-size: 15.5px;

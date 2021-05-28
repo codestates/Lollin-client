@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 const useForm = validate => {
     const [values, setValues] = useState({
-        Id: '',
+        userId: '',
         password: '',
         nickname: '',
         email: ''

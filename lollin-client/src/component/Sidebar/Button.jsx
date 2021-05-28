@@ -16,7 +16,7 @@ export const LoginButton = styled(Link)`
     justify-content: center;
     align-items: center;
     padding: ${({ big }) => (big ? '16px 40px' : '14px 24px')};
-    color: ${({ primary }) => (primary ? '#fff' : '#000d1a')};
+    color: #fff;
     font-size: ${({ big }) => (big ? '20px' : '14px')};
 
     &:hover {
@@ -28,7 +28,7 @@ export const LoginButton = styled(Link)`
 
 export const SignupButton = styled(Link)`
     border-radius: 4px;
-    background: ${({ primary }) => (primary ? '#000d1a' : 'CD853F')};
+    background: #5A5AFF;
     white-space: nowrap;
     outline: none;
     border: none;
@@ -41,7 +41,7 @@ export const SignupButton = styled(Link)`
     justify-content: center;
     align-items: center;
     padding: ${({ big }) => (big ? '16px 40px' : '14px 24px')};
-    color: ${({ primary }) => (primary ? '#fff' : '#000d1a')};
+    color: #fff;
     font-size: ${({ big }) => (big ? '20px' : '14px')};
     margin-left: 20px;
 

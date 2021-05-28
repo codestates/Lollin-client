@@ -1,20 +1,13 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-// import { Modal, Button, Form, Container } from 'react-bootstrap';
-import { GoogleLogin } from 'react-google-login';
-import { NaverLogin } from 'react-naver-login';
-import HorizonLine from './HorizonLine';
-import validate from "../validation/validate";
-import useForm from "../validation/useForm";
-import { Errors, LoginBtn, KakaoBtn, NaverBtn } from "../validation/formElements";
+import HorizonLine from '../../modals/HorizonLine';
+import validate from "../../validation/validate";
+import useForm from "../../validation/useForm";
+import { Container, Form, Title, Errors, LoginBtn, KakaoBtn, 
+    NaverBtn, InputArea, LabelName, InputBox} from "../../validation/formElements";
 
-const LoginModal = ({ submitForm, username, password }) => {
+const Login = ({ submitForm, username, password }) => {
     const { handleChange, values, handleSubmit, errors } = useForm(submitForm, validate);
-    // const [isSubmitted, setIsSubmitted] = useState(false)
-    
-    // function submitForm() {
-    //     setIsSubmitted(true);
-    // }
     const [isLogin, setIsLogin] = useState(false);
 
     const handleLogin = async () => {
@@ -45,7 +38,7 @@ const LoginModal = ({ submitForm, username, password }) => {
     }
 
     const handleKakao = async () => {
-        console.log("로그인 성공!");
+        console.log("로그인 접속성공!");
         await axios
         .post(
             '/auth/kakao',
@@ -88,40 +81,39 @@ const LoginModal = ({ submitForm, username, password }) => {
 
     return (
         <>
-            <form className="form" onSubmit={handleSubmit}>
-                <h1>Login</h1>
-                <div className="form-inputs">
-                    <label htmlFor="username"
-                    className="form-label">
+            <Container>
+            <Form onSubmit={handleSubmit}>
+                <Title>Login</Title>
+                <InputArea>
+                    <LabelName htmlFor="username">
                     ID
-                    </label>
-                    <input
+                    </LabelName>
+                    <br />
+                    <InputBox
                         id="username"
                         type="text"
                         name="username"
-                        className="form-input"
                         placeholder="Enter your Id"
-                        value={values.userId}
+                        value={values.username}
                         onChange={handleChange}
                     />
-                    {errors.userId && <Errors>{errors.userId}</Errors>}
-                </div>
-                <div className="form-inputs">
-                    <label htmlFor="password"
-                    className="form-label">
+                    {errors.username && <Errors>{errors.username}</Errors>}
+                </InputArea>
+                <InputArea>
+                    <LabelName htmlFor="password">
                     Password
-                    </label>
-                        <input
+                    </LabelName>
+                    <br />
+                        <InputBox
                             id="password"
                             type="password"
                             name="password"
-                            className="form-input"
                             placeholder="Enter your Password"
                             value={values.password}
                             onChange={handleChange}
                         />
                         {errors.password && <Errors>{errors.password}</Errors>}
-                </div>
+                </InputArea>
                 <LoginBtn onClick={handleLogin}>
                     {!isLogin ? "Login" : "Succeed!"}
                 </LoginBtn>
@@ -134,9 +126,10 @@ const LoginModal = ({ submitForm, username, password }) => {
                 <NaverBtn onClick={handleNaver}>
                     네이버 로그인
                 </NaverBtn>
-            </form>
+            </Form>
+            </Container>
         </>
     )
 }
 
-export default LoginModal;
+export default Login;
