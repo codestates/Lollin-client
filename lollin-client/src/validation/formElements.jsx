@@ -177,5 +177,6 @@ export const LeaveBtn = styled.button`
     &:hover {
         cursor: pointer;
         background-color: #e0e0e0;
+        color: #000;
     }
 `;
