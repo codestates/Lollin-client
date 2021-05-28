@@ -3,7 +3,7 @@ import { NavLink as Link } from "react-router-dom";
 
 export const Container = styled.div`
     margin: 100px auto;
-    width: 1000px;
+    width: 800px;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
     position: relative;
     border-radius: 10px;
@@ -22,6 +22,7 @@ export const Form = styled.form`
     position: absolute;
     top: 50%;
     left: 50%;
+    right: 50%;
     transform: translate(-50%, -50%);
     width: 97%;
     height: 97%;
@@ -57,11 +58,12 @@ export const LabelName = styled.label`
 `;
 export const InputBox = styled.input`
 	display: block;
+
     padding-left: 10px;
     outline: none;
     border-radius: 2px;
     height: 40px;
-    width: 99.2%;
+    width: 96.6%;
     border: none;
 
     ::placeholder {
@@ -77,11 +79,11 @@ export const Errors = styled.p`
 `;
 
 export const LoginBtn = styled.button`
-    width: 81.3%;
+    width: 78.5%;
     height: 50px;
     margin-top: 15px;
     border-radius: 2px;
-    background: #00BFFF;
+    background: #0080FF;
     outline: none;
     border: none;
     color: #000;
@@ -94,7 +96,7 @@ export const LoginBtn = styled.button`
 `;
 
 export const KakaoBtn = styled.button`
-    width: 81.3%;
+    width: 78.5%;
     height: 50px;
     margin-top: 10px;
     border-radius: 2px;
@@ -112,7 +114,7 @@ export const KakaoBtn = styled.button`
 `;
 
 export const NaverBtn = styled.button`
-    width: 81.3%;
+    width: 78.5%;
     height: 50px;
     margin-top: 10px;
     border-radius: 2px;
@@ -134,7 +136,7 @@ export const SignupBtn = styled.button`
     height: 50px;
     margin-top: 15px;
     border-radius: 2px;
-    background: #00BFFF;
+    background: #0080FF;
     outline: none;
     border: none;
     color: #000;
@@ -151,7 +153,7 @@ export const UpdateBtn = styled.button`
     height: 50px;
     margin-top: 15px;
     border-radius: 2px;
-    background: #00BFFF;
+    background: #0080FF;
     outline: none;
     border: none;
     color: #000;

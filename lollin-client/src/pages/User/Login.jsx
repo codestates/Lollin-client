@@ -122,7 +122,6 @@ const Login = ({ submitForm, username, password }) => {
                 <KakaoBtn onClick={handleKakao}>
                     카카오 로그인
                 </KakaoBtn>
-                <br />
                 <NaverBtn onClick={handleNaver}>
                     네이버 로그인
                 </NaverBtn>
