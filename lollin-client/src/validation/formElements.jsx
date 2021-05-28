@@ -98,15 +98,16 @@ export const KakaoBtn = styled.button`
     height: 50px;
     margin-top: 10px;
     border-radius: 2px;
-    background: #ffff00;
+    background: #121212;
     outline: none;
     border: none;
-    color: #000;
+    color: #fff;
     font-size: 1.5rem;
 
     &:hover {
         cursor: pointer;
-        background-color: #ffff99;
+        background-color: #ffff00;
+        color: #000
     }
 `;
 
@@ -115,15 +116,16 @@ export const NaverBtn = styled.button`
     height: 50px;
     margin-top: 10px;
     border-radius: 2px;
-    background: #00ff00;
+    background: #121212;
     outline: none;
     border: none;
-    color: #000;
+    color: #fff;
     font-size: 1.5rem;
     
     &:hover {
         cursor: pointer;
-        background-color: #99ff99;
+        background-color: #00ff00;
+        color: #000;
     }
 `;
 
@@ -164,16 +166,16 @@ export const UpdateBtn = styled.button`
 export const LeaveBtn = styled.button`
     width: 81.3%;
     height: 50px;
-    margin-top: 15px;
+    margin-top: 10px;
     border-radius: 2px;
-    background: #ff6666;
+    background: #121212;
     outline: none;
     border: none;
-    color: #000;
+    color: #fff;
     font-size: 1.5rem;
 
     &:hover {
         cursor: pointer;
-        background-color: #ff9999;
+        background-color: #e0e0e0;
     }
 `;
