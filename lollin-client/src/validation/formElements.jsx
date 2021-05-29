@@ -63,7 +63,7 @@ export const InputBox = styled.input`
     outline: none;
     border-radius: 2px;
     height: 40px;
-    width: 96.6%;
+    width: 99.2%;
     border: none;
 
     ::placeholder {
@@ -79,7 +79,7 @@ export const Errors = styled.p`
 `;
 
 export const LoginBtn = styled.button`
-    width: 78.5%;
+    width: 81.3%;
     height: 50px;
     margin-top: 15px;
     border-radius: 2px;
@@ -96,7 +96,7 @@ export const LoginBtn = styled.button`
 `;
 
 export const KakaoBtn = styled.button`
-    width: 78.5%;
+    width: 81.3%;
     height: 50px;
     margin-top: 10px;
     border-radius: 2px;
@@ -114,7 +114,7 @@ export const KakaoBtn = styled.button`
 `;
 
 export const NaverBtn = styled.button`
-    width: 78.5%;
+    width: 81.3%;
     height: 50px;
     margin-top: 10px;
     border-radius: 2px;
